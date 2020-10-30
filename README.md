@@ -1,6 +1,6 @@
 # Pure-Pursuit-and-PID-controller
 
-## Description: 
+## Description:(Both controllers can be found in file Controllers.py) 
 * **Pure Pursuit** 
   - it based on look-ahead point and the fixed distance between the point and the center of the rear axle, it assumes no-slip conditions and ignores dynamic forces. To adjust it   for higher speeds the look-ahead distance can be represented by constant Kdd and forward velocity vc (ld=Kdd*vc).
 
