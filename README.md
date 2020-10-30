@@ -32,4 +32,3 @@
 ## To do: 
 - **autotuning PID controller such as PIDNN or implementing twiddle**
 - **tuning Pure Pursuit controller to achive more smooth approach to the corners or try to implement Stanley**
-"# Pure-Pursuit-and-PID-controller" 
