@@ -167,7 +167,7 @@ class Controller2D(object):
             # Change these outputs with the longitudinal controller. Note that
             # brake_output is optional and is not required to pass the
             # assignment, as the car will naturally slow down over time.
-            throttle_output = pid.output(self._current_timestamp,self._desired_speed,self._current_speed,self.p)
+            throttle_output = pid.output(self._current_timestamp,self._desired_speed,self._current_speed)
             brake_output    = 0
             ######################################################
             ######################################################
