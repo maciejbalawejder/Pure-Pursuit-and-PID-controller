@@ -6,19 +6,25 @@ class PID():
         self.I = I
         self.D = D
         self.t_previous = 0
-        self.error = 0
-        self.errors = [0]
+        self.last_error = 0
+        self.E = 0
 
-    def output(self,t_current,desired_speed,current_speed,p):
+    def output(self,t_current,desired_speed,current_speed):
         delta = t_current - self.t_previous
-        self.error = desired_speed - current_speed
-        proportional = self.P * self.error
-        integral = self.I * sum(self.errors)
-        derivative = self.D * ((self.error-self.errors[-1])/delta)
-        self.errors.append(self.error)
-        self.t_previous = t_current
+        error = desired_speed - current_speed
+        
+        self.E += self.E * delta
+        
+        proportional = self.P * error
+        integral = self.I * self.E
+        derivative = self.D * ((error-self.last_error)/delta)
 
         output = proportional + integral + derivative
+        
+        # Update
+        self.last_error = error
+        self.t_previous = t_current
+        
         return output
 
 
